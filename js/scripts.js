@@ -11,3 +11,21 @@ WebFont.load({
     n.className += t + "js",
         ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
 }(window, document);
+
+
+function showImage(data) {
+    const modal = document.querySelector('.modal');
+    modal.classList.add('open');
+    document.querySelector('.modal-img').src = "assets/" + data + ".jpeg";
+}
+
+function closeModal() {
+    const modal = document.querySelector('.modal');
+    modal.classList.remove('open');
+}
+
+function closeModalBackground(e) {
+    if (e.target.classList.contains('modal')) {
+        closeModal();
+    }
+}
